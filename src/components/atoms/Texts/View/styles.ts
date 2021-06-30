@@ -1,12 +1,12 @@
-import { StyleSheet } from "react-native";
-import { ModelOfTheme } from "@src/theme";
+import { StyleSheet } from 'react-native';
+import { ModelOfTheme } from '@soccerapp/theme';
 
 export const styles = (theme: ModelOfTheme, isTextElement: boolean = false) => {
   const { fontFamily, fontSize, colors } = theme;
   return StyleSheet.create({
     base: {
       fontFamily: fontFamily.regular,
-      color: isTextElement ? colors.textElements : colors.text
+      color: isTextElement ? colors.textElements : colors.text,
     },
     body: { fontSize: fontSize.base },
     title: { fontSize: fontSize.largest },
@@ -18,5 +18,5 @@ export const styles = (theme: ModelOfTheme, isTextElement: boolean = false) => {
     },
     textElement: { color: colors.textElements },
     link: { color: colors.textHighlight, textAlign: 'center' },
-  })
-}
+  });
+};

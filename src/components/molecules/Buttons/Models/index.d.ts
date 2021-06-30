@@ -1,6 +1,11 @@
-import {Component} from 'react';
-import { GestureResponderEvent, StyleProp, ViewStyle, TextStyle } from "react-native";
-import { ModelOfTheme } from "@src/theme";
+import { Component } from 'react';
+import {
+  GestureResponderEvent,
+  StyleProp,
+  ViewStyle,
+  TextStyle,
+} from 'react-native';
+import { ModelOfTheme } from '@soccerapp/theme';
 
 export type ModelOfButtonBase = {
   theme: ModelOfTheme;
@@ -18,22 +23,20 @@ export type ModelOfButtonBase = {
 
 export type ModelOfButtonFixed = {
   theme: ModelOfTheme;
-  IconSVG: React.FC<React.SVGProps<SVGSVGElement>>,
+  IconSVG: React.FC<React.SVGProps<SVGSVGElement>>;
   style?: StyleProp<ViewStyle>;
   onPress: () => void;
-}
+};
 
-export type ModelOfButtonLink =  {
+export type ModelOfButtonLink = {
   theme: ModelOfTheme;
-  label?: string,
+  label?: string;
   styleLabel?: StyleProp<TextStyle>;
-  IconSVG?: React.FC<React.SVGProps<SVGSVGElement>>,
+  IconSVG?: React.FC<React.SVGProps<SVGSVGElement>>;
   style?: StyleProp<ViewStyle>;
-  onPress:
-  | ((() => void) & (() => void))
-  | undefined;
+  onPress: ((() => void) & (() => void)) | undefined;
   IconColor?: string;
-}
+};
 
 export class Base extends Component<ModelOfButtonBase> {}
 export class Fixed extends Component<ModelOfButtonFixed> {}

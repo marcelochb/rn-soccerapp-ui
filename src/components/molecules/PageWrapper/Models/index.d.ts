@@ -1,16 +1,16 @@
-import {Component} from 'react';
-import { ReactNode } from "react";
-import { ModelOfTheme } from "@src/theme";
+import { Component } from 'react';
+import { ReactNode } from 'react';
+import { ModelOfTheme } from '@soccerapp/theme';
 
 export type ModelOfPageWapper = {
-  isStatusBarLight?: boolean,
-  isScrollForm?: boolean,
-  isScrollList?: boolean,
+  isStatusBarLight?: boolean;
+  isScrollForm?: boolean;
+  isScrollList?: boolean;
   Header?: ReactNode;
   ButtonFixed?: ReactNode;
   loading?: boolean;
   noHorizontalPadding?: boolean;
-  theme: ModelOfTheme
-}
+  theme: ModelOfTheme;
+};
 
 export class PageWrapper extends Component<ModelOfPageWapper> {}

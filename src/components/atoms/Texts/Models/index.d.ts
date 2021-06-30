@@ -1,6 +1,6 @@
-import {Component} from 'react';
-import { ModelOfTheme } from "@src/theme";
-import { StyleProp, TextStyle } from "react-native";
+import { Component } from 'react';
+import { ModelOfTheme } from '@soccerapp/theme';
+import { StyleProp, TextStyle } from 'react-native';
 
 export type ModelOfTexts = {
   theme: ModelOfTheme;
@@ -9,11 +9,11 @@ export type ModelOfTexts = {
   isLoading?: boolean;
   isOutline?: boolean;
   isTextElement?: boolean;
-}
+};
 
 export type Teste = {
-  Body: Component<ModelOfTexts>
-}
+  Body: Component<ModelOfTexts>;
+};
 
 export class Body extends Component<ModelOfTexts> {}
 export class Title extends Component<ModelOfTexts> {}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
 import { ModelOfStatusBarPageWrapper } from '../Models';
-import { ModelOfTheme } from '@src/theme';
+import { ModelOfTheme } from '@soccerapp/theme';
 
 
 export const StatusBarPageWrapper: React.FC<ModelOfStatusBarPageWrapper> = ({

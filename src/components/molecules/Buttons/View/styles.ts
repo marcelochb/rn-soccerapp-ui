@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native";
-import { ModelOfTheme } from "@src/theme";
+import { StyleSheet } from 'react-native';
+import { ModelOfTheme } from '@soccerapp/theme';
 
 export const styles = (theme: ModelOfTheme) => {
   const { metrics, colors } = theme;
@@ -11,12 +11,12 @@ export const styles = (theme: ModelOfTheme) => {
       borderRadius: 50,
       alignItems: 'center',
       justifyContent: 'center',
-      alignSelf: 'center'
+      alignSelf: 'center',
     },
     outline: {
       backgroundColor: colors.background,
       borderWidth: 1,
-      borderColor: colors.elements
+      borderColor: colors.elements,
     },
     fixed: {
       justifyContent: 'center',
@@ -35,16 +35,20 @@ export const styles = (theme: ModelOfTheme) => {
       position: 'relative',
       bottom: 20,
       left: metrics.screenWidth / 1.3,
-      zIndex: 1000
+      zIndex: 1000,
     },
     link: {
       width: metrics.buttonWidth,
       height: metrics.buttonHeight,
       alignItems: 'center',
       justifyContent: 'center',
-      alignSelf: 'center'
+      alignSelf: 'center',
     },
     content: { width: '100%' },
-    viewSVG: { flexDirection: 'row', justifyContent: 'space-between', width: '100%' },
-  })
-}
+    viewSVG: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      width: '100%',
+    },
+  });
+};
