@@ -16,4 +16,4 @@ export type ModelOfSignUpPopup = {
   tertiaryButtonOnPress: ((() => void) & (() => void))
 }
 
-export class SignUpPopup extends Component<ModelOfSignUpPopup> {};
+export class SignUpPopup extends Component<ModelOfSignUpPopup> {}
