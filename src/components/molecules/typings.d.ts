@@ -1,2 +1,2 @@
-export * as Buttons from './Buttons/Models';
-export * from './PageWrapper/Models';
+export * from './exhibitions/typings';
+export * from './interactives/typings';

@@ -1,2 +1,2 @@
-export {Buttons} from './Buttons/View';
-export {PageWrapper} from './PageWrapper/View';
+export * from './exhibitions';
+export * from './interactives';
