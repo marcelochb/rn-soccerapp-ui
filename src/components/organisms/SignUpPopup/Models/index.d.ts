@@ -1,4 +1,5 @@
-import { ModelOfTheme } from "@src/theme";
+import { Component } from "react";
+import { ModelOfTheme } from "@soccerapp/theme";
 
 export type ModelOfSignUpPopup = {
   visible: boolean;
@@ -14,3 +15,5 @@ export type ModelOfSignUpPopup = {
   tertiaryButtonIcon?: React.FC<React.SVGProps<SVGSVGElement>> | undefined
   tertiaryButtonOnPress: ((() => void) & (() => void))
 }
+
+export class SignUpPopup extends Component<ModelOfSignUpPopup> {};
