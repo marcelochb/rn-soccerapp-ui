@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { ModelOfTheme } from '@soccerapp/theme';
 import { ModelOfSignUpPopup } from '../Models';
-import { Buttons, PopupOptions } from '@src/components/molecules';
+import { Buttons, PopupOptions } from '../../../molecules';
 
 export const SignUpPopup: React.FC<ModelOfSignUpPopup> = ({
   visible,

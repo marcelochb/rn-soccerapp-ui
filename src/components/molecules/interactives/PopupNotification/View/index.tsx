@@ -5,7 +5,7 @@ import { ModelOfTheme } from '@soccerapp/theme';
 
 import { ModelOfPopupNotification } from '../Models';
 import IconClear from '@src/assets/Icons/iconClear.svg';
-import { NotificationIcon, Texts } from '@src/components/atoms';
+import { NotificationIcon, Texts } from '../../../../atoms';
 import { Buttons } from '../../Buttons/View';
 
 export const PopupNotification: React.FC<ModelOfPopupNotification> = ({
