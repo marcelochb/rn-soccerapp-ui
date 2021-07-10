@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Modal, StyleSheet } from 'react-native';
 import { ModelOfPopup } from '../Models';
-import { Texts } from '@src/components/Atoms';
+import { Texts } from '../../../../atoms';
 import { Buttons } from '../../Buttons/View';
 import { styles } from './styles';
 

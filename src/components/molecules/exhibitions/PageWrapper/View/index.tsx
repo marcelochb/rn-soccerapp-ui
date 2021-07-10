@@ -3,7 +3,7 @@ import { View, StyleSheet, ActivityIndicator, SafeAreaView, ScrollView, StatusBa
 import { ModelOfPageWapper } from '../Models';
 import { ModelOfTheme } from '@soccerapp/theme';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { StatusBarPageWrapper, StatusBarPage } from '@src/components/Atoms';
+import { StatusBarPageWrapper, StatusBarPage } from '../../../../atoms';
 
 
 export const PageWrapper: React.FC<ModelOfPageWapper> = ({

@@ -7,7 +7,7 @@ import IconPasswordOff from '@src/assets/Icons/iconPasswordOff.svg';
 import IconPasswordOn from '@src/assets/Icons/iconPasswordOn.svg';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { ModelOfTheme } from '@soccerapp/theme';
-import { Texts } from '@src/components/Atoms';
+import { Texts } from '../../../../atoms';
 
 export const Input: React.FC<ModelOfInput> = ({
   theme,

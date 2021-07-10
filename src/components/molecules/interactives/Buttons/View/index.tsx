@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { ModelOfButtonBase, ModelOfButtonFixed, ModelOfButtonLink } from '../Models';
-import { Texts } from '@src/components/Atoms';
+import { Texts } from '../../../../atoms';
 import { styles } from './styles';
 
 const Base: React.FC<ModelOfButtonBase> = ({
