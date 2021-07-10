@@ -10,6 +10,7 @@ export const styles = (theme: ModelOfTheme, isTextElement: boolean = false) => {
       color: isTextElement ? colors.textElements : colors.text,
     },
     body: { fontSize: fontSize.base },
+    button: { fontSize: fontSize.base },
     title: { fontSize: fontSize.largest },
     titleSmall: { fontSize: fontSize.large },
     subTitle: { fontSize: fontSize.small },
@@ -18,6 +19,10 @@ export const styles = (theme: ModelOfTheme, isTextElement: boolean = false) => {
       color: colors.textHighlight,
     },
     textElement: { color: colors.textElements },
-    link: { color: colors.textHighlight, textAlign: 'center' },
+    link: {
+      color: colors.textHighlight,
+      textAlign: 'center',
+      fontSize: fontSize.base
+    },
   });
 };

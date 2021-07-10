@@ -49,7 +49,13 @@ const Button: React.FC<ModelOfTextsButton> = ({ isLoading, children, isOutline, 
         <ActivityIndicator color={theme.colors.textElements} />
       )
       : (
-        <Text style={[styles(theme).base, !isOutline ? styles(theme).textElement : {}, style]}>{children}</Text>
+        <Text style={[
+          styles(theme).base,
+          styles(theme).button,
+          !isOutline
+            ? styles(theme).textElement
+            : {},
+          style]}>{children}</Text>
 
       )
   );
@@ -57,7 +63,11 @@ const Button: React.FC<ModelOfTextsButton> = ({ isLoading, children, isOutline, 
 
 const Link: React.FC<ModelOfTextsLink> = ({ theme, style, children }) => {
   return (
-    <Text style={[styles(theme).base, styles(theme).link, style]}>{children}</Text>
+    <Text style={[
+      styles(theme).base,
+      styles(theme).link,
+      style
+    ]}>{children}</Text>
   );
 }
 
