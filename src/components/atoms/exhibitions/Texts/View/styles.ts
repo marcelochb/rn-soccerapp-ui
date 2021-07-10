@@ -6,6 +6,7 @@ export const styles = (theme: ModelOfTheme, isTextElement: boolean = false) => {
   return StyleSheet.create({
     base: {
       fontFamily: fontFamily.regular,
+      fontSize: fontSize.base,
       color: isTextElement ? colors.textElements : colors.text,
     },
     body: { fontSize: fontSize.base },
