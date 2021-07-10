@@ -4,8 +4,9 @@ import { View, Modal, StyleSheet } from 'react-native';
 import { ModelOfTheme } from '@soccerapp/theme';
 
 import { ModelOfPopupNotification } from '../Models';
-import { NotificationIcon, Texts, Buttons } from '@src/components';
 import IconClear from '@src/assets/Icons/iconClear.svg';
+import { NotificationIcon, Texts } from '@src/components/atoms';
+import { Buttons } from '../../Buttons/View';
 
 export const PopupNotification: React.FC<ModelOfPopupNotification> = ({
   theme,
