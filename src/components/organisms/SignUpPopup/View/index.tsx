@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { ModelOfTheme } from '@soccerapp/theme';
 import { ModelOfSignUpPopup } from '../Models';
-import { Buttons, PopupOptions } from '../../../molecules';
+import { Buttons, Popups } from '../../../molecules';
 
 export const SignUpPopup: React.FC<ModelOfSignUpPopup> = ({
   visible,
@@ -19,7 +19,7 @@ export const SignUpPopup: React.FC<ModelOfSignUpPopup> = ({
   tertiaryButtonOnPress,
 }) => {
   return (
-    <PopupOptions theme={theme} visible={visible} onDismiss={onDismiss}
+    <Popups.Options theme={theme} visible={visible} onHandler={onDismiss}
       firstButton={
         <Buttons.Link theme={theme} label={firstButtonLabel} IconSVG={firstButtonIcon}
           style={styles(theme).buttonLink}
