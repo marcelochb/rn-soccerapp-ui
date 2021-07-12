@@ -1,4 +1,4 @@
-import { ModelOfTheme } from "@src/theme";
+import { ModelOfTheme } from "@soccerapp/theme";
 import { StyleSheet } from "react-native";
 
 export const styles = (theme: ModelOfTheme) => {
