@@ -18,9 +18,11 @@ export const styles = (theme: ModelOfTheme) => {
       padding: metrics.base,
       borderRadius: metrics.radiusBase
     },
+    flexDirectionRow: {flexDirection: 'row'},
     viewTop: {
       flexDirection: 'row',
       alignItems: 'center',
+      marginBottom: metrics.large
     },
     marginBottom: { marginBottom: metrics.large },
     notificationTitle: { paddingTop: metrics.base, color: colors.textSecundary },

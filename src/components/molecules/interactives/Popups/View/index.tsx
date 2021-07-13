@@ -24,7 +24,7 @@ const Confirmation: React.FC<ModelOfPopupConfirmation> = ({
     <Modal animationType="fade" transparent={true} visible={visible}>
       <View style={styles(theme).container}>
         <View style={styles(theme).content}>
-          <View style={[styles(theme).viewTop, styles(theme).marginBottom]}>
+          <View style={styles(theme).viewTop}>
             <NotificationIcon theme={theme} type={"Atenção"} />
             <Texts.Body theme={theme}>{question}</Texts.Body>
 
@@ -56,7 +56,7 @@ const Notification: React.FC<ModelOfPopupNotification> = ({
   return (
     <Modal animationType="fade" transparent={true} visible={visible}>
       <View style={styles(theme).container}>
-        <View style={styles(theme).content}>
+        <View style={[styles(theme).content, styles(theme).flexDirectionRow]}>
           <NotificationIcon theme={theme} type={type} />
           <View style={{ flex: 1 }}>
             <Texts.Title theme={theme} small style={styles(theme).notificationTitle}>{type}</Texts.Title>
