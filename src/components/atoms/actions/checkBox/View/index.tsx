@@ -7,7 +7,7 @@ import IconCheckBoxOutlineBlank from '@src/assets/Icons/iconCheckBoxOutlineBlank
 import IconRadioButtonChecked from '@src/assets/Icons/iconRadioButtonChecked.svg';
 import IconRadioButtonUnchecked from '@src/assets/Icons/iconRadioButtonUnchecked.svg';
 import { ModelOfTheme } from '@soccerapp/theme';
-import { Texts } from '@src/components';
+import { Texts } from '../../../../atoms';
 
 export const CheckBox: React.FC<ModelOfCheckBox> = (
   {
