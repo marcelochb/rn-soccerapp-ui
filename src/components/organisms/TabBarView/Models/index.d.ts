@@ -16,4 +16,4 @@ export type ModelOfTabBarView = {
   theme: ModelOfTheme;
 }
 
-export class TabBarView extends Component<ModelOfTabBar> {}
+export class TabBarView extends Component<ModelOfTabBarView> {}
