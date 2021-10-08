@@ -2,7 +2,7 @@ import React from 'react';
 import { Dimensions, View } from 'react-native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import { ModelOfTabBar, ModelOfTabBarView } from '../Models';
-import { Badge, Texts } from '../../../../components/Atoms';
+import { Badge, Texts } from '../../../../components/atoms';
 import { styles } from './styles';
 
 const initialLayout = { width: Dimensions.get('window').width };
