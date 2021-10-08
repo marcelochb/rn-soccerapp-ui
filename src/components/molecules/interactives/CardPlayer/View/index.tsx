@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, TouchableWithoutFeedback } from 'react-native';
 import { ModelOfCardPlayer } from '../Models';
-import { Avatar, Texts } from '../../../../../components/Atoms';
+import { Avatar, Texts } from '../../../../../components/atoms';
 import IconArrowRight from '@src/assets/Icons/iconArrowRight.svg';
 import { styles } from './styles';
 
