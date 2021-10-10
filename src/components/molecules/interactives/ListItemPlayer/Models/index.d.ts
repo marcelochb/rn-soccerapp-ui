@@ -1,7 +1,7 @@
 import { ModelOfTheme } from "@soccerapp/theme";
 import { Component } from "react";
 
-export type ModelOfCardPlayer = {
+export type ModelOfListItemPlayer = {
   avatarSource: string | undefined;
   nickname: string | undefined;
   name: string | undefined;
@@ -9,4 +9,4 @@ export type ModelOfCardPlayer = {
   theme: ModelOfTheme;
 }
 
-export class CardPlayer extends Component<ModelOfCardPlayer> {}
+export class ListItemPlayer extends Component<ModelOfListItemPlayer> {}

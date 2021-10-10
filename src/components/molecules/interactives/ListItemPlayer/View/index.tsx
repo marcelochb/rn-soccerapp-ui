@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, TouchableWithoutFeedback } from 'react-native';
-import { ModelOfCardPlayer } from '../Models';
+import { ModelOfListItemPlayer } from '../Models';
 import { Avatar, Texts } from '../../../../../components/atoms';
 import IconArrowRight from '@src/assets/Icons/iconArrowRight.svg';
 import { styles } from './styles';
 
-export const CardPlayer: React.FC<ModelOfCardPlayer> = ({
+export const ListItemPlayer: React.FC<ModelOfListItemPlayer> = ({
   name,
   nickname,
   navigateTo,
