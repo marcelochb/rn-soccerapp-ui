@@ -1,4 +1,5 @@
 import { ModelOfTheme } from "@soccerapp/theme";
+import { Component } from "react";
 
 export type ModelOfListItemTeam = {
   theme: ModelOfTheme;
@@ -9,3 +10,5 @@ export type ModelOfListItemTeam = {
   selectOnPressed: (() => void) | undefined;
   editOnPressed: (() => void) | undefined;
 }
+
+export class ListItemTeam extends Component<ModelOfListItemTeam> {}
