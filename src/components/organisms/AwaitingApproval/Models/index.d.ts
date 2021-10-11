@@ -10,4 +10,4 @@ export type ModelOfAwaitingApproval = {
 }
 
 
-export class AwaitingApprobal extends Component<ModelOfAwaitingApproval> {}
+export class AwaitingApproval extends Component<ModelOfAwaitingApproval> {}
