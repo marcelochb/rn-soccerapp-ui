@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Buttons, PageWrapper, Texts } from '../../../';
+import { Texts } from '../../../atoms/exhibitions';
+import { Buttons, PageWrapper } from '../../../molecules';
 import { ModelOfAwaitingApproval } from '../Models';
 
 
