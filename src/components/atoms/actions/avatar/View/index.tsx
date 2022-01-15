@@ -10,6 +10,7 @@ export const Avatar: React.FC<ModelOfAvatar> = ({
   style,
   onPress,
   source,
+  sourceImage,
   small = false,
   error = false,
   disable = false,
@@ -24,10 +25,14 @@ export const Avatar: React.FC<ModelOfAvatar> = ({
             ? (
               <Image source={{ uri: source }} style={[styles(theme).image, styles(theme).small]} resizeMode='cover' />
             )
-            : (
+            : sourceImage
+              ?  (
 
-              <Image source={imgAvatar} style={[styles(theme).image, styles(theme).small]} resizeMode='cover' />
-            )
+                <Image source={sourceImage} style={[styles(theme).image, styles(theme).small]} resizeMode='cover' />
+              )
+              : (
+                <Image source={imgAvatar} style={[styles(theme).image, styles(theme).small]} resizeMode='cover' />
+              )
           }
         </>
       </View>
