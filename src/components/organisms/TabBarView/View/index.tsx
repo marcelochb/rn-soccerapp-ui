@@ -9,15 +9,17 @@ const initialLayout = { width: Dimensions.get('window').width };
 
 export const TabBarView: React.FC<ModelOfTabBarView> = ({
   FirstTab,
+  firstTabTitle,
   FirstTabBadge,
   SecondTab,
+  secondTabTitle,
   SecondTabBadge,
   theme
 }) => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'first', title: 'Primeiro quadro' },
-    { key: 'second', title: 'Segundo quadro' },
+    { key: 'first', title: firstTabTitle },
+    { key: 'second', title: secondTabTitle },
   ]);
 
 
@@ -37,11 +39,16 @@ export const TabBarView: React.FC<ModelOfTabBarView> = ({
       )}
     />
   )
-
-  const renderScene = SceneMap({
-    first: FirstTab,
-    second: SecondTab,
-  });
+  const renderScene = ({ route }:{route: any}) => {
+    switch (route.key) {
+      case 'first':
+        return <FirstTab />;
+      case 'second':
+        return <SecondTab />;
+      default:
+        return null;
+    }
+  };
 
 
 

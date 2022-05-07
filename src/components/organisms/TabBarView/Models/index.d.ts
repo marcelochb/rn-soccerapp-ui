@@ -10,8 +10,10 @@ export type ModelOfTabBar = SceneRendererProps & ModelOfTabBarViewParameters;
 
 export type ModelOfTabBarView = {
   FirstTab:  React.ComponentType<{}>;
+  firstTabTitle: string;
   FirstTabBadge?: number;
   SecondTab: React.ComponentType<{}>;
+  secondTabTitle: string;
   SecondTabBadge?: number;
   theme: ModelOfTheme;
 }
