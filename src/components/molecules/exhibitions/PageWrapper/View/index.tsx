@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, StyleSheet, ActivityIndicator, SafeAreaView, ScrollView, StatusBar } from 'react-native';
+import { View, StyleSheet, ActivityIndicator, ScrollView, SafeAreaView } from 'react-native';
 import { ModelOfPageWapper } from '../Models';
 import { ModelOfTheme } from '@soccerapp/theme';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { StatusBarPageWrapper, StatusBarPage } from '../../../../atoms';
+// import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 export const PageWrapper: React.FC<ModelOfPageWapper> = ({

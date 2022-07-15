@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
 import { ModelOfStatusBarPageWrapper } from '../Models';
 import { ModelOfTheme } from '@soccerapp/theme';
+// import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 export const StatusBarPageWrapper: React.FC<ModelOfStatusBarPageWrapper> = ({
