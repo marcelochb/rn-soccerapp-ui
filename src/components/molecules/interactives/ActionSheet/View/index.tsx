@@ -10,21 +10,27 @@ import {
 } from 'react-native';
 import { useActionSheetController } from '../Controller';
 import { ModelOfActionSheet } from '../Models';
-import styles from './styles';
+import {styles} from './styles';
 const deviceHeight = Dimensions.get('screen').height;
 
 const AnimatedView = Animated.createAnimatedComponent(View);
 
 
-export const ActionSheet: React.FC<ModelOfActionSheet> = ({ theme, children}) => {
-  const [animatedTop] = useState(new Animated.Value(deviceHeight));
+export const ActionSheet: React.FC<ModelOfActionSheet> = ({
+  theme,
+  children,
+  visible,
+  dismiss
+}) => {
+  const [animatedTop] = useState(new Animated.Value(300));
   const [pan] = useState(new Animated.ValueXY());
-  const {getController, handleController} = useActionSheetController(pan,animatedTop,deviceHeight)
+  const {getController, handleController} = useActionSheetController(pan,animatedTop,deviceHeight,visible, dismiss);
   const panStyle = {
     transform: pan.getTranslateTransform()
   };
   return (
-    <Modal transparent visible={getController.visible} onRequestClose={() => handleController.close()}>
+
+    <Modal transparent visible={visible} onRequestClose={() => dismiss()}>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles(theme).keyboard}
@@ -33,8 +39,7 @@ export const ActionSheet: React.FC<ModelOfActionSheet> = ({ theme, children}) =>
           <TouchableOpacity
             style={styles(theme).background}
             activeOpacity={1}
-            onPress={() => handleController.close()}
-            testID="closable-empty-area"
+            onPress={() => dismiss()}
           />
           <AnimatedView
             {...getController.panResponder.panHandlers}

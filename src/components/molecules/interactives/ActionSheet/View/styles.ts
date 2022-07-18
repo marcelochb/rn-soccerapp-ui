@@ -1,27 +1,27 @@
 import { ModelOfTheme } from '@soccerapp/theme';
 import { StyleSheet } from 'react-native';
 
-const styles = (theme: ModelOfTheme) => {
+export const styles = (theme: ModelOfTheme) => {
   const {colors, metrics} = theme;
    return StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: colors.background,
-    justifyContent: 'flex-end'
+    backgroundColor: 'transparent',
+    justifyContent: 'flex-end',
   },
   keyboard: {
-    flex: 1
+    flex: 1,
   },
   background: {
     flex: 1,
     backgroundColor: 'transparent'
   },
   container: {
-    backgroundColor: colors.background,
+    backgroundColor: colors.elements,
     width: '100%',
     overflow: 'hidden',
-    borderTopRightRadius: metrics.radiusBase,
-    borderTopLeftRadius: metrics.radiusBase
+    borderTopRightRadius: metrics.radiusLarge,
+    borderTopLeftRadius: metrics.radiusLarge
   },
   draggableContainer: {
     width: '100%',
@@ -34,9 +34,8 @@ const styles = (theme: ModelOfTheme) => {
     borderRadius: 3,
     margin: 10,
     marginBottom: 0,
-    backgroundColor: colors.elements
+    backgroundColor: colors.textElements
   }
 });
 }
 
-export default styles;

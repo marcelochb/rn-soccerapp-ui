@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Animated, PanResponder } from "react-native";
 
 
-export const useActionSheetController = (pan: Animated.ValueXY, animatedTop:Animated.Value, deviceHeight: number | Animated.ValueXY | Animated.Value | { x: number; y: number; } | Animated.AnimatedInterpolation) => {
-  const [visible, setVisible] = useState(false);
+export const useActionSheetController = (
+  pan: Animated.ValueXY,
+  animatedTop:Animated.Value,
+  deviceHeight: number | Animated.ValueXY | Animated.Value | { x: number; y: number; } | Animated.AnimatedInterpolation,
+  visible: boolean = false,
+  dismiss: () => void,
+  ) => {
   const [boxHeight, setBoxHeight] = useState(0);
-  const close = () => setVisible(false);
   const [panResponder, setPanResponder] = useState(
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,
@@ -18,7 +22,7 @@ export const useActionSheetController = (pan: Animated.ValueXY, animatedTop:Anim
         const gestureLimitArea = boxHeight / 3;
         const gestureDistance = gestureState.dy;
         if (gestureDistance > gestureLimitArea) {
-          setVisible(false);
+          dismiss();
         } else {
           Animated.spring(pan, { toValue: { x: 0, y: 0 }, useNativeDriver: true }).start();
         }
@@ -37,43 +41,38 @@ export const useActionSheetController = (pan: Animated.ValueXY, animatedTop:Anim
       const gestureLimitArea = boxHeight / 3;
       const gestureDistance = gestureState.dy;
       if (gestureDistance > gestureLimitArea) {
-        setVisible(false);
+        dismiss();
       } else {
         Animated.spring(pan, { toValue: { x: 0, y: 0 }, useNativeDriver: true }).start();
       }
     }
   }))
-  const setModalVisibleCustom = (visible: boolean) => {
-    if (visible) {
-      setVisible(visible)
-      Animated.timing(animatedTop, {
-        toValue: 0,
-        duration: 300,
-        useNativeDriver: true
-      }).start();
-    } else {
-      Animated.timing(animatedTop, {
-        toValue: deviceHeight,
-        duration: 300,
-        useNativeDriver: true
-      }).start(() => {
-        pan.setValue({ x: 0, y: 0 });
-        setVisible(visible)
-      });
-    }
-  }
 
-    const panStyle = {
-      transform: pan.getTranslateTransform()
-    };
-
+  useEffect(
+    () => {
+      if (visible) {
+        console.log('entrei');
+        Animated.timing(animatedTop, {
+          toValue: 0,
+          duration: 300,
+          useNativeDriver: true
+        }).start();
+      } else {
+        Animated.timing(animatedTop, {
+          toValue: deviceHeight,
+          duration: 300,
+          useNativeDriver: true
+        }).start(() => {
+          pan.setValue({ x: 0, y: 0 });
+        })
+      }
+    },[visible]
+  )
     return {
       getController: {
-        visible,
         panResponder
       },
       handleController: {
-        close,
         setBoxHeight,
         createPanResponder,
       }
