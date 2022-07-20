@@ -30,7 +30,7 @@ export const ActionSheet: React.FC<ModelOfActionSheet> = ({
   };
   return (
 
-    <Modal transparent visible={visible} onRequestClose={() => dismiss()}>
+    <Modal transparent visible={getController.visibleLocal} onRequestClose={() => dismiss()}>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles(theme).keyboard}

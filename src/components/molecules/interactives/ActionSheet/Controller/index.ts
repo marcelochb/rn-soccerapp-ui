@@ -10,6 +10,7 @@ export const useActionSheetController = (
   dismiss: () => void,
   ) => {
   const [boxHeight, setBoxHeight] = useState(0);
+  const [visibleLocal, setVisibleLocal] = useState(visible);
   const [panResponder, setPanResponder] = useState(
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,
@@ -51,7 +52,7 @@ export const useActionSheetController = (
   useEffect(
     () => {
       if (visible) {
-        console.log('entrei');
+        setVisibleLocal(visible)
         Animated.timing(animatedTop, {
           toValue: 0,
           duration: 300,
@@ -64,18 +65,20 @@ export const useActionSheetController = (
           useNativeDriver: true
         }).start(() => {
           pan.setValue({ x: 0, y: 0 });
+          setVisibleLocal(visible)
         })
       }
     },[visible]
   )
-    return {
-      getController: {
-        panResponder
-      },
-      handleController: {
-        setBoxHeight,
-        createPanResponder,
-      }
+  return {
+    getController: {
+      panResponder,
+      visibleLocal,
+    },
+    handleController: {
+      setBoxHeight,
+      createPanResponder,
     }
+  }
 
 }

@@ -6,7 +6,7 @@ export const styles = (theme: ModelOfTheme) => {
    return StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: 'transparent',
+    backgroundColor: colors.backgroundModal,
     justifyContent: 'flex-end',
   },
   keyboard: {
@@ -14,12 +14,13 @@ export const styles = (theme: ModelOfTheme) => {
   },
   background: {
     flex: 1,
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
   },
   container: {
-    backgroundColor: colors.elements,
+    backgroundColor: colors.background,
     width: '100%',
     overflow: 'hidden',
+    padding: metrics.base,
     borderTopRightRadius: metrics.radiusLarge,
     borderTopLeftRadius: metrics.radiusLarge
   },
@@ -34,7 +35,7 @@ export const styles = (theme: ModelOfTheme) => {
     borderRadius: 3,
     margin: 10,
     marginBottom: 0,
-    backgroundColor: colors.textElements
+    backgroundColor: colors.elementsSecundary
   }
 });
 }
