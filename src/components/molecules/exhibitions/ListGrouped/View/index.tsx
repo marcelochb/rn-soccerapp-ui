@@ -29,5 +29,5 @@ export const ListGrouped: React.FC<ModelOfListGrouped> = ({
 }
 
 const styles = (theme: ModelOfTheme) => StyleSheet.create({
-  container: { height: '100%', padding: theme.metrics.base }
+  container: { padding: theme.metrics.base }
 })
