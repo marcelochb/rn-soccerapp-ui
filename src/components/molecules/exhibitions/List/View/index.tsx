@@ -27,5 +27,5 @@ export const List: React.FC<ModelOfList> = ({
 }
 
 const styles = (theme: ModelOfTheme) => StyleSheet.create({
-  container: { height: '100%', padding: theme.metrics.base }
+  container: { padding: theme.metrics.base }
 })

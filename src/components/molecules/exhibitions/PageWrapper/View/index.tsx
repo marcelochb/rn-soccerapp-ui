@@ -45,26 +45,6 @@ export const PageWrapper: React.FC<ModelOfPageWapper> = ({
     </>
   )
 
-  if (isScrollList) return (
-    <>
-      <StatusBarPageWrapper theme={theme} isStatusBarLight={isStatusBarLight} />
-      <SafeAreaView style={styles(theme).container}>
-        <StatusBarPage theme={theme} isStatusBarLight={isStatusBarLight} />
-        {Header && <View style={styles(theme).header}>{Header}</View>}
-        <ScrollView
-          style={[styles(theme).scrollView, styles(theme).paddingH]}
-          keyboardShouldPersistTaps="handled"
-        >
-          <SafeAreaView>
-
-            {children}
-          </SafeAreaView>
-        </ScrollView>
-        {ButtonFixed && ButtonFixed}
-      </SafeAreaView>
-    </>
-
-  )
   return (
     <>
       <StatusBarPageWrapper theme={theme} isStatusBarLight={isStatusBarLight} />

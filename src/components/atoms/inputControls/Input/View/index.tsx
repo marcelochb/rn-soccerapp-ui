@@ -21,20 +21,14 @@ export const Input: React.FC<ModelOfInput> = ({
   ...rest
 }) => {
   const { getController, handleController } = useInputController({ isSecurityTextEntry });
-  const { animateLabel } = getController;
   return (
     <>
       <View style={[styles(theme).container, style, error ? styles(theme).errorColor : {}]}>
-        <Animated.View style={[styles(theme).viewLabel, editable ? animateLabel.getLayout() : {}]}>
-          {IconSVG && <IconSVG fill={theme.colors.textSecundary} width={styles(theme).icon.width} height={styles(theme).icon.height} />}
-          <Texts.SubTitle theme={theme} style={styles(theme).label}>{label}</Texts.SubTitle>
-        </Animated.View>
         <View style={styles(theme).viewInput}>
-          {startAnimate && handleController.moveLabelUp() && animateLabel.stopAnimation()}
+          {IconSVG && <IconSVG fill={theme.colors.textSecundary} width={styles(theme).icon.width} height={styles(theme).icon.height} />}
           <TextInput
             style={styles(theme).input}
-            onFocus={handleController.moveLabelUp}
-            onBlur={({ nativeEvent }) => handleController.moveLabelDown(nativeEvent)}
+            placeholder={label}
             secureTextEntry={getController.isPasswordVisible}
             editable={editable}
             {...rest}
@@ -59,8 +53,8 @@ const styles = (theme: ModelOfTheme) => {
   const { colors, metrics, fontFamily, fontSize } = theme;
   return StyleSheet.create({
     container: {
-      borderBottomColor: colors.text,
-      borderBottomWidth: 2,
+      borderBottomColor: colors.elementsSecundary,
+      borderBottomWidth: 1,
     },
     errorColor: { borderBottomColor: colors.textHighlight },
     label: {
@@ -81,6 +75,6 @@ const styles = (theme: ModelOfTheme) => {
       paddingHorizontal: 20,
     },
     viewLabel: { flexDirection: 'row', alignItems: 'center' },
-    viewInput: { flexDirection: 'row' }
+    viewInput: { flexDirection: 'row', alignItems: 'center' }
   })
 };
