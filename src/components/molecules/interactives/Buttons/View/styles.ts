@@ -33,7 +33,7 @@ export const styles = (theme: ModelOfTheme) => {
       shadowOpacity: 1,
       shadowRadius: 1,
       position: 'relative',
-      bottom: 20,
+      bottom: 70,
       left: metrics.screenWidth / 1.3,
       zIndex: 1000,
     },

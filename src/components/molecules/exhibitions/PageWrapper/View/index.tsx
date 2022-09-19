@@ -38,9 +38,11 @@ export const PageWrapper: React.FC<ModelOfPageWapper> = ({
           contentContainerStyle={[styles(theme).container, styles(theme).paddingH]}
           keyboardShouldPersistTaps="handled"
         >
+          <>
           {children}
+          {ButtonFixed && ButtonFixed}
+          </>
         </KeyboardAwareScrollView>
-        {ButtonFixed && ButtonFixed}
       </View>
     </>
   )
@@ -52,9 +54,11 @@ export const PageWrapper: React.FC<ModelOfPageWapper> = ({
         <StatusBarPage theme={theme} isStatusBarLight={isStatusBarLight} />
         {Header && <View style={styles(theme).header}>{Header}</View>}
         <View style={[styles(theme).content, styles(theme).paddingV, noHorizontalPadding ? {} : styles(theme).paddingH]}>
+          <>
           {children}
+          {ButtonFixed && ButtonFixed}
+          </>
         </View>
-        {ButtonFixed && ButtonFixed}
       </SafeAreaView>
     </>
   )

@@ -11,6 +11,7 @@ export type ModelOfPageWapper = {
   loading?: boolean;
   noHorizontalPadding?: boolean;
   theme: ModelOfTheme;
+  children: ReactNode;
 };
 
 export class PageWrapper extends Component<ModelOfPageWapper> {}
