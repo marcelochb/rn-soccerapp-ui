@@ -4,18 +4,22 @@ import { ModelOfPageWapper } from '../Models';
 import { ModelOfTheme } from '@soccerapp/theme';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { StatusBarPageWrapper, StatusBarPage } from '../../../../atoms';
+import { ActionSheetWrapper } from '../../../interactives';
 
 
 export const PageWrapper: React.FC<ModelOfPageWapper> = ({
   children,
   isStatusBarLight = false,
   isScrollForm = false,
-  isScrollList = false,
   noHorizontalPadding = false,
   Header,
   ButtonFixed,
   loading = false,
-  theme
+  theme,
+  actionSheetBody: bodyActionSheet,
+  hasActionSheet = false,
+  actionSheetDismiss = () => {},
+  actionSheetVisible = false
 }) => {
   if (loading) {
     return (
@@ -60,6 +64,13 @@ export const PageWrapper: React.FC<ModelOfPageWapper> = ({
           </>
         </View>
       </SafeAreaView>
+      <ActionSheetWrapper
+        theme={theme}
+        dismiss={actionSheetDismiss}
+        visible={actionSheetVisible}
+      >
+        {bodyActionSheet}
+      </ActionSheetWrapper>
     </>
   )
 

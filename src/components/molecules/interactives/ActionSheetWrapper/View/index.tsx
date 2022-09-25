@@ -9,14 +9,14 @@ import {
   Platform
 } from 'react-native';
 import { useActionSheetController } from '../Controller';
-import { ModelOfActionSheet } from '../Models';
+import { ModelOfActionSheetWrapper } from '../Models';
 import {styles} from './styles';
 const deviceHeight = Dimensions.get('screen').height;
 
 const AnimatedView = Animated.createAnimatedComponent(View);
 
 
-export const ActionSheet: React.FC<ModelOfActionSheet> = ({
+export const ActionSheetWrapper: React.FC<ModelOfActionSheetWrapper> = ({
   theme,
   children,
   visible,

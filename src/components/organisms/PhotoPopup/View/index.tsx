@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import iconCamera from '@src/assets/Icons/iconCamera.svg';
-import iconGalery from '@src/assets/Icons/iconGalery.svg';
+import iconCamera from '@src/assetsui/Icons/iconCamera.svg';
+import iconGalery from '@src/assetsui/Icons/iconGalery.svg';
 import { ModelOfPhotoPopup } from '../Models';
 import { Popups, Buttons } from '../../../molecules';
 import { ModelOfTheme } from '@soccerapp/theme';

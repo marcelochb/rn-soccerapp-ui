@@ -2,7 +2,7 @@ import React from 'react';
 import { View, TouchableWithoutFeedback } from 'react-native';
 import { ModelOfListItemPlayer } from '../Models';
 import { Avatar, Texts } from '../../../../../components/atoms';
-import IconArrowRight from '@src/assets/Icons/iconArrowRight.svg';
+import IconArrowRight from '@src/assetsui/Icons/iconArrowRight.svg';
 import { styles } from './styles';
 
 export const ListItemPlayer: React.FC<ModelOfListItemPlayer> = ({

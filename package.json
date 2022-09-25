@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.12.1",
-    "@soccerapp/theme": "git+ssh://git@github.com:marcelochb/rn-soccerapp-theme",
+    "@soccerapp/theme": "*",
     "react": "18.0.0",
     "react-native": "0.69.1",
     "react-native-config": "^1.4.6",
@@ -33,7 +33,7 @@
     "react-native-tab-view": "^3.1.1"
   },
   "peerDependencies": {
-    "@soccerapp/theme": "git+ssh://git@github.com:marcelochb/rn-soccerapp-theme",
+    "@soccerapp/theme": "*",
     "react": "18.0.0",
     "react-native": "0.69.1",
     "react-native-image-crop-picker": "^0.36.3",

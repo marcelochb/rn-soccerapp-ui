@@ -1,11 +1,11 @@
 import { ModelOfTheme } from "@soccerapp/theme";
 import React, { Component } from "react";
 
-export interface ModelOfActionSheet {
+export interface ModelOfActionSheetWrapper {
   theme: ModelOfTheme;
   dismiss: () => void;
   visible: boolean;
   children: React.ReactNode;
 }
 
-export class ActionSheet extends Component<ModelOfActionSheet> {}
+export class ActionSheetWrapper extends Component<ModelOfActionSheetWrapper> {}

@@ -3,8 +3,8 @@ import { View, TextInput, Animated, Text, StyleSheet } from 'react-native';
 import { ModelOfInput } from '../Models';
 import { useInputController } from '../Controller';
 
-import IconPasswordOff from '@src/assets/Icons/iconPasswordOff.svg';
-import IconPasswordOn from '@src/assets/Icons/iconPasswordOn.svg';
+import IconPasswordOff from '@src/assetsui/Icons/iconPasswordOff.svg';
+import IconPasswordOn from '@src/assetsui/Icons/iconPasswordOn.svg';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { ModelOfTheme } from '@soccerapp/theme';
 import { Texts } from '../../../../atoms';

@@ -2,9 +2,9 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { ModelOfNotificationIcon } from '../Models';
 
-import IconCheckCicle from '@src/assets/Icons/iconCheckCircle.svg';
-import IconWarning from '@src/assets/Icons/iconWarning.svg';
-import IconDangerous from '@src/assets/Icons/iconDangerous.svg';
+import IconCheckCicle from '@src/assetsui/Icons/iconCheckCircle.svg';
+import IconWarning from '@src/assetsui/Icons/iconWarning.svg';
+import IconDangerous from '@src/assetsui/Icons/iconDangerous.svg';
 import { ModelOfTheme } from '@soccerapp/theme';
 
 export const NotificationIcon: React.FC<ModelOfNotificationIcon> = ({ type, theme }) => {

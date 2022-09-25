@@ -2,10 +2,10 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { ModelOfCheckBox } from '../Models';
-import IconCheckBox from '@src/assets/Icons/iconCheckBox.svg';
-import IconCheckBoxOutlineBlank from '@src/assets/Icons/iconCheckBoxOutlineBlank.svg';
-import IconRadioButtonChecked from '@src/assets/Icons/iconRadioButtonChecked.svg';
-import IconRadioButtonUnchecked from '@src/assets/Icons/iconRadioButtonUnchecked.svg';
+import IconCheckBox from '@src/assetsui/Icons/iconCheckBox.svg';
+import IconCheckBoxOutlineBlank from '@src/assetsui/Icons/iconCheckBoxOutlineBlank.svg';
+import IconRadioButtonChecked from '@src/assetsui/Icons/iconRadioButtonChecked.svg';
+import IconRadioButtonUnchecked from '@src/assetsui/Icons/iconRadioButtonUnchecked.svg';
 import { ModelOfTheme } from '@soccerapp/theme';
 import { Texts } from '../../../exhibitions';
 

@@ -48,8 +48,8 @@ const Link: React.FC<ModelOfButtonLink> = ({
 }) => {
   const colorIcon = IconColor ?? theme.colors.textSecundary;
   return (
-    <TouchableOpacity style={[styles(theme).link, style]} onPress={onPress} >
-      <View style={[styles(theme).content, IconSVG ? styles(theme).viewSVG : {}]}>
+    <TouchableOpacity style={[styles(theme).link]} onPress={onPress} >
+      <View style={[styles(theme).content, IconSVG ? styles(theme).viewSVG : {},style]}>
         {label && <Texts.Link theme={theme} style={styleLabel}>{label}</Texts.Link>}
         {IconSVG && <IconSVG fill={colorIcon} />}
       </View>
