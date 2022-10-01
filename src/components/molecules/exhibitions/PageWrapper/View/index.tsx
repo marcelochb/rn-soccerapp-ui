@@ -4,7 +4,6 @@ import { ModelOfPageWapper } from '../Models';
 import { ModelOfTheme } from '@soccerapp/theme';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { StatusBarPageWrapper, StatusBarPage } from '../../../../atoms';
-import { ActionSheetWrapper } from '../../../interactives';
 
 
 export const PageWrapper: React.FC<ModelOfPageWapper> = ({
@@ -13,13 +12,11 @@ export const PageWrapper: React.FC<ModelOfPageWapper> = ({
   isScrollForm = false,
   noHorizontalPadding = false,
   Header,
+  isHeaderRadius = false,
   ButtonFixed,
   loading = false,
   theme,
-  actionSheetBody: bodyActionSheet,
-  hasActionSheet = false,
-  actionSheetDismiss = () => {},
-  actionSheetVisible = false
+  actionSheet,
 }) => {
   if (loading) {
     return (
@@ -56,7 +53,7 @@ export const PageWrapper: React.FC<ModelOfPageWapper> = ({
       <StatusBarPageWrapper theme={theme} isStatusBarLight={isStatusBarLight} />
       <SafeAreaView style={styles(theme).container}>
         <StatusBarPage theme={theme} isStatusBarLight={isStatusBarLight} />
-        {Header && <View style={styles(theme).header}>{Header}</View>}
+        {Header && <View style={[styles(theme).header, isHeaderRadius ? styles(theme).headerRadius : {}]}>{Header}</View>}
         <View style={[styles(theme).content, styles(theme).paddingV, noHorizontalPadding ? {} : styles(theme).paddingH]}>
           <>
           {children}
@@ -64,13 +61,7 @@ export const PageWrapper: React.FC<ModelOfPageWapper> = ({
           </>
         </View>
       </SafeAreaView>
-      <ActionSheetWrapper
-        theme={theme}
-        dismiss={actionSheetDismiss}
-        visible={actionSheetVisible}
-      >
-        {bodyActionSheet}
-      </ActionSheetWrapper>
+      {actionSheet && actionSheet}
     </>
   )
 
@@ -91,6 +82,8 @@ const styles = (theme: ModelOfTheme) => {
     header: {
       width: '100%',
       backgroundColor: colors.elements,
+    },
+    headerRadius: {
       borderBottomStartRadius: metrics.radiusLargest,
       borderBottomEndRadius: metrics.radiusLargest,
       padding: metrics.base

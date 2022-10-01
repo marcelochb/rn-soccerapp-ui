@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dimensions, View } from 'react-native';
-import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
+import { TabView, TabBar } from 'react-native-tab-view';
 import { ModelOfTabBar, ModelOfTabBarView } from '../Models';
 import { Badge, Texts } from '../../../../components/atoms';
 import { styles } from './styles';
@@ -29,9 +29,9 @@ export const TabBarView: React.FC<ModelOfTabBarView> = ({
       indicatorStyle={styles(theme).tabIndicator}
       indicatorContainerStyle={styles(theme).tabIndicatorContainer}
       style={[styles(theme).tab]}
-      renderLabel={({ route, focused, color, }) => (
+      renderLabel={({ route, focused }) => (
         <>
-          <Texts.Body theme={theme} isTextElement={focused} style={[styles(theme).tabLabel]}>
+          <Texts.Body theme={theme} isTextElement={focused} >
             {route.title}
           </Texts.Body>
           <Badge theme={theme} value={route.key === 'first' ? FirstTabBadge : SecondTabBadge} />

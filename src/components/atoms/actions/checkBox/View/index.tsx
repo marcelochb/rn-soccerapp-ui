@@ -15,6 +15,7 @@ export const CheckBox: React.FC<ModelOfCheckBox> = (
     isChecked,
     onClick,
     style,
+    styleLabel,
     theme,
     isRadioButton = false,
     disable = false,
@@ -28,7 +29,7 @@ export const CheckBox: React.FC<ModelOfCheckBox> = (
         ? (<IconChecked fill={'#000'} />)
         : (<IconUnchecked fill={'#000'} />)
       }
-      <Texts.Body theme={theme} style={styles(theme).label}>{label}</Texts.Body>
+      <Texts.Body theme={theme} style={[styles(theme).label, styleLabel]}>{label}</Texts.Body>
     </TouchableWithoutFeedback>
   );
 }

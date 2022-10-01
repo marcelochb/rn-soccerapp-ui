@@ -6,15 +6,13 @@ export type ModelOfPageWapper = {
   isStatusBarLight?: boolean;
   isScrollForm?: boolean;
   Header?: ReactNode;
+  isHeaderRadius?: boolean;
   ButtonFixed?: ReactNode;
   loading?: boolean;
   noHorizontalPadding?: boolean;
   theme: ModelOfTheme;
   children: ReactNode;
-  actionSheetBody?: ReactNode;
-  hasActionSheet?: boolean;
-  actionSheetDismiss?: () => void;
-  actionSheetVisible?: boolean;
+  actionSheet?: ReactNode;
 };
 
 export class PageWrapper extends Component<ModelOfPageWapper> {}

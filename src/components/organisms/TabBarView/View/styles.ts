@@ -21,8 +21,4 @@ export const styles = (theme: ModelOfTheme) => StyleSheet.create({
     borderRadius: theme.metrics.radiusBase,
     borderColor: theme.colors.elements
   },
-  tabLabel: {
-    textTransform: 'capitalize',
-    color: theme.colors.textSecundary
-  },
 })

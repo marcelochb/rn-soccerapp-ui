@@ -10,7 +10,7 @@ export const styles = (theme: ModelOfTheme, isTextElement: boolean = false) => {
       color: isTextElement ? colors.textElements : colors.text,
     },
     body: { fontSize: fontSize.base },
-    button: { fontSize: fontSize.base },
+    button: { fontSize: fontSize.large },
     title: { fontSize: fontSize.largest },
     titleSmall: { fontSize: fontSize.large },
     subTitle: { fontSize: fontSize.small },
