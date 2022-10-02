@@ -54,7 +54,7 @@ export const PageWrapper: React.FC<ModelOfPageWapper> = ({
       <SafeAreaView style={styles(theme).container}>
         <StatusBarPage theme={theme} isStatusBarLight={isStatusBarLight} />
         {Header && <View style={[styles(theme).header, isHeaderRadius ? styles(theme).headerRadius : {}]}>{Header}</View>}
-        <View style={[styles(theme).content, styles(theme).paddingV, noHorizontalPadding ? {} : styles(theme).paddingH]}>
+        <View style={[styles(theme).content, noHorizontalPadding ? {} : styles(theme).paddingH]}>
           <>
           {children}
           {ButtonFixed && ButtonFixed}
@@ -78,9 +78,7 @@ const styles = (theme: ModelOfTheme) => {
       flex: 1,
     },
     paddingH: { paddingHorizontal: metrics.base },
-    paddingV: { paddingVertical: metrics.base },
     header: {
-      width: '100%',
       backgroundColor: colors.elements,
     },
     headerRadius: {

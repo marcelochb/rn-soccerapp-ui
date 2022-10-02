@@ -4,8 +4,6 @@ import { GestureResponderEvent } from "react-native";
 
 export type ModelOfActionSheetSquad = {
   theme: ModelOfTheme;
-  dismiss: () => void;
-  visible: boolean;
   isCheckedFirstSquad: boolean;
   onClickFirstSquad: () => void;
   isCheckedSecondSquad: boolean;

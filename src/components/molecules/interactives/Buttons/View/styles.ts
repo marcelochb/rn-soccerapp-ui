@@ -32,10 +32,9 @@ export const styles = (theme: ModelOfTheme) => {
       shadowOffset: { width: 1, height: 1 },
       shadowOpacity: 1,
       shadowRadius: 1,
-      position: 'relative',
-      bottom: 70,
+      position: 'absolute',
+      bottom: 20,
       left: metrics.screenWidth / 1.3,
-      zIndex: 1000,
     },
     link: {
       width: metrics.buttonWidth,
@@ -48,7 +47,6 @@ export const styles = (theme: ModelOfTheme) => {
     viewSVG: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      width: '100%',
     },
   });
 };

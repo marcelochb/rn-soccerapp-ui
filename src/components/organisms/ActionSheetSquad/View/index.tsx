@@ -1,23 +1,27 @@
-import React from "react";
+import React, { useImperativeHandle, useState } from "react";
 import { View } from "react-native";
 import { CheckBox, Texts } from "../../../atoms";
 import { ActionSheetWrapper, Buttons } from "../../../molecules";
 import { ModelOfActionSheetSquad } from "../Models";
 import { styles } from "./styles";
 
-export const ActionSheetSquad: React.FC<ModelOfActionSheetSquad> = ({
+export const ActionSheetSquad = React.forwardRef<any,ModelOfActionSheetSquad>(({
   theme,
-  dismiss,
-  visible,
   isCheckedFirstSquad,
   isCheckedSecondSquad,
   onClickFirstSquad,
   onClickSecondSquad
-}) => {
+},ref) => {
+  const [visibled, setVisibled] = useState(false);
+  const close = () => setVisibled(false);
+  useImperativeHandle(ref,() => ({
+    show: () => {setVisibled(true)},
+  }));
+
   return (
     <ActionSheetWrapper theme={theme}
-      visible={visible}
-      dismiss={dismiss}
+      visible={visibled}
+      dismiss={close}
     >
     <View style={styles(theme).container}>
       <Texts.Body theme={theme} style={styles(theme).title}>Selecione o time</Texts.Body>
@@ -47,4 +51,4 @@ export const ActionSheetSquad: React.FC<ModelOfActionSheetSquad> = ({
     </View>
     </ActionSheetWrapper>
   );
-}
+})
