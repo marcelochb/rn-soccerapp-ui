@@ -12,17 +12,13 @@ export const ActionSheetSquad = React.forwardRef<any,ModelOfActionSheetSquad>(({
   onClickFirstSquad,
   onClickSecondSquad
 },ref) => {
-  const [visibled, setVisibled] = useState(false);
-  const close = () => setVisibled(false);
+  const refActionSheetWrapper = React.useRef<any>()
   useImperativeHandle(ref,() => ({
-    show: () => {setVisibled(true)},
+    show: () => {refActionSheetWrapper.current.show()},
   }));
 
   return (
-    <ActionSheetWrapper theme={theme}
-      visible={visibled}
-      dismiss={close}
-    >
+    <ActionSheetWrapper theme={theme} ref={refActionSheetWrapper}>
     <View style={styles(theme).container}>
       <Texts.Body theme={theme} style={styles(theme).title}>Selecione o time</Texts.Body>
       <CheckBox

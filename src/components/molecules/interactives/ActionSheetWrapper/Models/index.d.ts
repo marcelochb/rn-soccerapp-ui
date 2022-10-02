@@ -3,8 +3,6 @@ import React, { Component } from "react";
 
 export interface ModelOfActionSheetWrapper {
   theme: ModelOfTheme;
-  dismiss: () => void;
-  visible: boolean;
   children: React.ReactNode;
 }
 

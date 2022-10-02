@@ -1,36 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   View,
   Modal,
   TouchableOpacity,
   Animated,
-  Dimensions,
   KeyboardAvoidingView,
   Platform
 } from 'react-native';
 import { useActionSheetController } from '../Controller';
 import { ModelOfActionSheetWrapper } from '../Models';
 import {styles} from './styles';
-const deviceHeight = Dimensions.get('screen').height;
 
 const AnimatedView = Animated.createAnimatedComponent(View);
 
 
-export const ActionSheetWrapper: React.FC<ModelOfActionSheetWrapper> = ({
+export const ActionSheetWrapper = React.forwardRef<any,ModelOfActionSheetWrapper>(({
   theme,
   children,
-  visible,
-  dismiss
-}) => {
-  const [animatedTop] = useState(new Animated.Value(300));
-  const [pan] = useState(new Animated.ValueXY());
-  const {getController, handleController} = useActionSheetController(pan,animatedTop,deviceHeight,visible, dismiss);
-  const panStyle = {
-    transform: pan.getTranslateTransform()
-  };
+},ref) => {
+  const {getController, handleController} = useActionSheetController();
+  React.useImperativeHandle(ref,() => ({
+    show: () => {handleController.show()},
+  }));
+
   return (
 
-    <Modal transparent visible={getController.visibleLocal} onRequestClose={() => dismiss()}>
+    <Modal transparent visible={getController.visible} onRequestClose={handleController.dismiss}>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles(theme).keyboard}
@@ -39,11 +34,11 @@ export const ActionSheetWrapper: React.FC<ModelOfActionSheetWrapper> = ({
           <TouchableOpacity
             style={styles(theme).background}
             activeOpacity={1}
-            onPress={() => dismiss()}
+            onPress={handleController.dismiss}
           />
           <AnimatedView
             {...getController.panResponder.panHandlers}
-            style={[panStyle, styles(theme).container, { transform: [{ translateY: animatedTop }] }]}
+            style={[getController.panStyle, styles(theme).container, { transform: [{ translateY: getController.animatedTop }] }]}
             onLayout={({
               nativeEvent: {
                 layout: { height }
@@ -62,4 +57,4 @@ export const ActionSheetWrapper: React.FC<ModelOfActionSheetWrapper> = ({
       </KeyboardAvoidingView>
     </Modal>
   );
-}
+})

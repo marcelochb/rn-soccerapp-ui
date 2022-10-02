@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import { Animated, PanResponder } from "react-native";
+import { Animated, Dimensions, PanResponder } from "react-native";
 
 
-export const useActionSheetController = (
-  pan: Animated.ValueXY,
-  animatedTop:Animated.Value,
-  deviceHeight: number | Animated.ValueXY | Animated.Value | { x: number; y: number; } | Animated.AnimatedInterpolation,
-  visible: boolean = false,
-  dismiss: () => void,
-  ) => {
+export const useActionSheetController = () => {
+  const deviceHeight = Dimensions.get('screen').height;
   const [boxHeight, setBoxHeight] = useState(0);
-  const [visibleLocal, setVisibleLocal] = useState(visible);
+  const [animatedTop] = useState(new Animated.Value(300));
+  const [visible, setVisible] = useState(false);
+  const [pan,setPan] = useState(new Animated.ValueXY());
+  const panStyle = {
+    transform: pan.getTranslateTransform()
+  };
   const [panResponder, setPanResponder] = useState(
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,
@@ -30,7 +30,8 @@ export const useActionSheetController = (
       }
     })
   );
-
+  const show = () => setVisible(true);
+  const dismiss = () => setVisible(false);
   const createPanResponder = () => setPanResponder(PanResponder.create({
     onStartShouldSetPanResponder: () => true,
     onPanResponderMove: (e, gestureState) => {
@@ -52,7 +53,7 @@ export const useActionSheetController = (
   useEffect(
     () => {
       if (visible) {
-        setVisibleLocal(visible)
+        setVisible(visible)
         Animated.timing(animatedTop, {
           toValue: 0,
           duration: 300,
@@ -65,7 +66,7 @@ export const useActionSheetController = (
           useNativeDriver: true
         }).start(() => {
           pan.setValue({ x: 0, y: 0 });
-          setVisibleLocal(visible)
+          setVisible(visible)
         })
       }
     },[visible]
@@ -73,11 +74,15 @@ export const useActionSheetController = (
   return {
     getController: {
       panResponder,
-      visibleLocal,
+      visible,
+      panStyle,
+      animatedTop,
     },
     handleController: {
       setBoxHeight,
       createPanResponder,
+      dismiss,
+      show
     }
   }
 
