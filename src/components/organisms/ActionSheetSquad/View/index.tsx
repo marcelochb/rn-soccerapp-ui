@@ -1,17 +1,17 @@
 import React, { useImperativeHandle, useState } from "react";
 import { View } from "react-native";
-import { CheckBox, Texts } from "../../../atoms";
-import { ActionSheetWrapper, Buttons } from "../../../molecules";
+import { Texts } from "../../../atoms";
+import { ActionSheetWrapper, Buttons, SelectButton } from "../../../molecules";
 import { ModelOfActionSheetSquad } from "../Models";
 import { styles } from "./styles";
 
 export const ActionSheetSquad = React.forwardRef<any,ModelOfActionSheetSquad>(({
   theme,
-  isCheckedFirstSquad,
-  isCheckedSecondSquad,
-  onClickFirstSquad,
-  onClickSecondSquad
+onPress
 },ref) => {
+  const [checked, setChecked] = useState('first');
+  const firstChecked = checked == 'first';
+  const secondChecked = checked == 'second';
   const refActionSheetWrapper = React.useRef<any>()
   useImperativeHandle(ref,() => ({
     show: () => {refActionSheetWrapper.current.show()},
@@ -21,28 +21,22 @@ export const ActionSheetSquad = React.forwardRef<any,ModelOfActionSheetSquad>(({
     <ActionSheetWrapper theme={theme} ref={refActionSheetWrapper}>
     <View style={styles(theme).container}>
       <Texts.Body theme={theme} style={styles(theme).title}>Selecione o time</Texts.Body>
-      <CheckBox
+      <SelectButton
         theme={theme}
-        isRadioButton
-        isChecked={isCheckedFirstSquad}
-        label="Primeiro quadro"
-        styleLabel={styles(theme).label}
-        style={styles(theme).content}
-        onClick={onClickFirstSquad}
-        />
-      <CheckBox
+        checked={firstChecked}
+        onClick={() => setChecked('first')}
+        label='Primeiro quadro'
+      />
+      <SelectButton
         theme={theme}
-        isRadioButton
-        isChecked={isCheckedSecondSquad}
-        styleLabel={styles(theme).label}
-        style={styles(theme).content}
-        label="Segundo quadro"
-        onClick={onClickSecondSquad}
-        />
+        checked={secondChecked}
+        onClick={() => setChecked('second')}
+        label='Segundo quadro'
+      />
       <Buttons.Base theme={theme}
         style={styles(theme).button}
         label="Salvar"
-        onPress={() => {}}
+        onPress={() => onPress(checked)}
         />
     </View>
     </ActionSheetWrapper>

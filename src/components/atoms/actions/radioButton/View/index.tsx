@@ -1,15 +1,13 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
-import { ModelOfCheckBox } from '../Models';
-import IconCheckBox from '@src/assetsui/Icons/iconCheckBox.svg';
-import IconCheckBoxOutlineBlank from '@src/assetsui/Icons/iconCheckBoxOutlineBlank.svg';
+import { ModelOfRadioButton } from '../Models';
 import IconRadioButtonChecked from '@src/assetsui/Icons/iconRadioButtonChecked.svg';
 import IconRadioButtonUnchecked from '@src/assetsui/Icons/iconRadioButtonUnchecked.svg';
 import { ModelOfTheme } from '@soccerapp/theme';
 import { Texts } from '../../../exhibitions';
 
-export const CheckBox: React.FC<ModelOfCheckBox> = (
+export const RadioButton: React.FC<ModelOfRadioButton> = (
   {
     label,
     isChecked,
@@ -24,8 +22,8 @@ export const CheckBox: React.FC<ModelOfCheckBox> = (
   return (
     <WrapperView style={[styles(theme).container, style]} onPress={onClick} disabled={disable}>
       {isChecked
-        ? (<IconCheckBox fill={'#000'} />)
-        : (<IconCheckBoxOutlineBlank fill={'#000'} />)
+        ? (<IconRadioButtonChecked fill={'#000'} />)
+        : (<IconRadioButtonUnchecked fill={'#000'} />)
       }
       {label && <Texts.Body theme={theme} style={[styles(theme).label, styleLabel]}>{label}</Texts.Body>}
     </WrapperView>

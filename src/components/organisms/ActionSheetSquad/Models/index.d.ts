@@ -4,14 +4,7 @@ import { GestureResponderEvent } from "react-native";
 
 export type ModelOfActionSheetSquad = {
   theme: ModelOfTheme;
-  isCheckedFirstSquad: boolean;
-  onClickFirstSquad: () => void;
-  isCheckedSecondSquad: boolean;
-  onClickSecondSquad: () => void;
-  onPress:
-  | (((event: GestureResponderEvent) => void) &
-      ((e: GestureResponderEvent) => void))
-  | undefined;
+  onPress: (squad:string) => void;
 }
 
 export class ActionSheetSquad extends Component<ModelOfActionSheetSquad> {}

@@ -2,7 +2,7 @@ import { ModelOfTheme } from "@soccerapp/theme";
 import { Component } from "react";
 import { StyleProp, TextStyle, ViewStyle } from "react-native";
 
-export type ModelOfCheckBox = {
+export type ModelOfRadioButton = {
   label?: string;
   isChecked: boolean;
   onClick?: () => void;
@@ -12,4 +12,4 @@ export type ModelOfCheckBox = {
   theme: ModelOfTheme;
 }
 
-export class CheckBox extends Component<ModelOfCheckBox> {}
+export class RaioButton extends Component<ModelOfRadioButton> {}

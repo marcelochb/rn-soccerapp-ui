@@ -1,14 +1,9 @@
 import { ModelOfTheme } from "@soccerapp/theme";
 import { StyleSheet } from "react-native";
 
-export const styles = (theme:ModelOfTheme) => {
-  const {metrics, fontSize,colors} = theme;
+export const styles = (theme: ModelOfTheme) => {
+  const {metrics, colors} = theme;
   return StyleSheet.create({
-    container: {
-      marginTop: metrics.base,
-      marginHorizontal: metrics.large,
-      marginBottom: metrics.largest,
-    },
     content: {
       marginVertical: metrics.small,
       backgroundColor: colors.elementsThird,
@@ -23,15 +18,5 @@ export const styles = (theme:ModelOfTheme) => {
     selected: {
       borderColor: colors.elements,
     },
-    label: {
-      fontSize: fontSize.largest,
-    },
-    title: {
-      textAlign: 'center',
-      marginBottom: metrics.large
-    },
-    button: {
-      marginTop: metrics.large,
-    }
   })
 }
