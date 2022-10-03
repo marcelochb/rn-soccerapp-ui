@@ -36,7 +36,10 @@ onPress
       <Buttons.Base theme={theme}
         style={styles(theme).button}
         label="Salvar"
-        onPress={() => onPress(checked)}
+        onPress={() => {
+          onPress(checked);
+          refActionSheetWrapper.current.close();
+        }}
         />
     </View>
     </ActionSheetWrapper>

@@ -21,6 +21,7 @@ export const ActionSheetWrapper = React.forwardRef<any,ModelOfActionSheetWrapper
   const {getController, handleController} = useActionSheetController();
   React.useImperativeHandle(ref,() => ({
     show: () => {handleController.show()},
+    close: () => {handleController.dismiss()},
   }));
 
   return (
