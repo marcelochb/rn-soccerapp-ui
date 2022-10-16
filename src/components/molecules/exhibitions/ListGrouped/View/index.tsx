@@ -1,6 +1,7 @@
 import { ModelOfTheme } from '@soccerapp/theme';
 import React from 'react';
 import { View, StyleSheet, SectionList } from 'react-native';
+import { Texts } from '../../../../atoms';
 import { ModelOfListGrouped } from '../Models';
 
 
@@ -12,22 +13,23 @@ export const ListGrouped: React.FC<ModelOfListGrouped> = ({
   theme,
   header
 }) => {
-  if (data?.length === 0) return null
+  if (data?.length === 0) return <Texts.Body theme={theme}>vazio</Texts.Body>
   return (
-    <View style={style}>
+    <View style={[styles(theme).container, style]}>
       <SectionList
-        contentContainerStyle={styles(theme).container}
         sections={data}
         renderSectionHeader={header}
+        stickySectionHeadersEnabled={false}
         keyExtractor={() => Math.random().toString()}
         horizontal={horizontal}
         renderItem={item}
         showsHorizontalScrollIndicator={false}
+        ListEmptyComponent={<Texts.Body theme={theme}>vazio</Texts.Body>}
       />
     </View>
   );
 }
 
 const styles = (theme: ModelOfTheme) => StyleSheet.create({
-  container: { padding: theme.metrics.base }
+  container: { padding: theme.metrics.base, flex: 1 }
 })
