@@ -8,7 +8,8 @@ export type ModelOfListGrouped<ItemT = any,SectionT = DefaultSectionT> = {
   item: SectionListRenderItem<ItemT, SectionT> | undefined;
   header: ((info: { section: SectionListData<ItemT, SectionT> }) => React.ReactElement | null) | undefined;
   style?: StyleProp<ViewStyle>;
-  theme: ModelOfTheme
+  theme: ModelOfTheme;
+  emptyList: React.ComponentType<any> | React.ReactElement<any, string | React.JSXElementConstructor<any>> | null | undefined;
 }
 
 export class ListGrouped<ItemT = any,SectionT = DefaultSectionT> extends Component<ModelOfListGrouped<ItemT,SectionT>> {}

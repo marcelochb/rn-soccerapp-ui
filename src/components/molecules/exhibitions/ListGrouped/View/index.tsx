@@ -11,9 +11,10 @@ export const ListGrouped: React.FC<ModelOfListGrouped> = ({
   item,
   style,
   theme,
-  header
+  header,
+  emptyList
 }) => {
-  if (data?.length === 0) return <Texts.Body theme={theme}>vazio</Texts.Body>
+  if (data.length == 0) return <>{emptyList}</>
   return (
     <View style={[styles(theme).container, style]}>
       <SectionList
@@ -24,7 +25,6 @@ export const ListGrouped: React.FC<ModelOfListGrouped> = ({
         horizontal={horizontal}
         renderItem={item}
         showsHorizontalScrollIndicator={false}
-        ListEmptyComponent={<Texts.Body theme={theme}>vazio</Texts.Body>}
       />
     </View>
   );
