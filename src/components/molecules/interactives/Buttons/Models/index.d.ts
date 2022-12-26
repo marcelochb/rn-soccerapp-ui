@@ -11,10 +11,7 @@ export type ModelOfButtonBase = {
   theme: ModelOfTheme;
   label: string;
   testID?: string;
-  onPress:
-    | (((event: GestureResponderEvent) => void) &
-        ((e: GestureResponderEvent) => void))
-    | undefined;
+  onPress: ((event: GestureResponderEvent) => void) | undefined;
   isLoading?: boolean;
   isDisabled?: boolean;
   isOutline?: boolean;
@@ -25,7 +22,7 @@ export type ModelOfButtonFixed = {
   theme: ModelOfTheme;
   IconSVG: React.FC<React.SVGProps<SVGSVGElement>>;
   style?: StyleProp<ViewStyle>;
-  onPress: () => void;
+  onPress: ((event: GestureResponderEvent) => void) | undefined;
 };
 
 export type ModelOfButtonLink = {
@@ -34,7 +31,7 @@ export type ModelOfButtonLink = {
   styleLabel?: StyleProp<TextStyle>;
   IconSVG?: React.FC<React.SVGProps<SVGSVGElement>>;
   style?: StyleProp<ViewStyle>;
-  onPress: ((() => void) & (() => void)) | undefined;
+  onPress: ((event: GestureResponderEvent) => void) | undefined;
   IconColor?: string;
 };
 

@@ -22,8 +22,9 @@ export const Input: React.FC<ModelOfInput> = ({
 }) => {
   const { getController, handleController } = useInputController({ isSecurityTextEntry });
   return (
-    <>
-      <View style={[styles(theme).container, style, error ? styles(theme).errorColor : {}]}>
+    <View style={style}>
+      <Texts.SubTitle theme={theme} style={styles(theme).subtitle}>{label}</Texts.SubTitle>
+      <View style={[styles(theme).container, error ? styles(theme).errorColor : {}]}>
         <View style={styles(theme).viewInput}>
           {IconSVG && <IconSVG fill={theme.colors.textSecundary} width={styles(theme).icon.width} height={styles(theme).icon.height} />}
           <TextInput
@@ -46,16 +47,19 @@ export const Input: React.FC<ModelOfInput> = ({
       </View>
       {(error) &&
         <Texts.Error theme={theme}>{error}</Texts.Error>}
-    </>
+    </View>
   );
 }
 const styles = (theme: ModelOfTheme) => {
   const { colors, metrics, fontFamily, fontSize } = theme;
   return StyleSheet.create({
     container: {
-      borderBottomColor: colors.elementsSecundary,
-      borderBottomWidth: 1,
+      borderColor: colors.elementsSecundary,
+      borderWidth: 1,
+      padding: metrics.base,
+      borderRadius: metrics.radiusBase,
     },
+    subtitle: {textTransform: 'capitalize', marginBottom: metrics.smallest},
     errorColor: { borderBottomColor: colors.textHighlight },
     label: {
       color: colors.textSecundary,
@@ -70,9 +74,10 @@ const styles = (theme: ModelOfTheme) => {
       fontSize: fontSize.base,
       color: colors.text,
       flex: 1,
+      marginLeft: metrics.small
     },
     password: {
-      paddingHorizontal: 20,
+      paddingHorizontal: metrics.base,
     },
     viewLabel: { flexDirection: 'row', alignItems: 'center' },
     viewInput: { flexDirection: 'row', alignItems: 'center' }
