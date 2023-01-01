@@ -30,11 +30,13 @@ export const ListItemTeam: React.FC<ModelOfListItemTeam> = ({
         <Buttons.Link theme={theme}
           label='Editar'
           styleLabel={styles(theme).edit}
+          styleContent={{flex: 1}}
           onPress={editOnPressed}
           style={styles(theme).viewButton}
-        />
+          />
         <Buttons.Link theme={theme}
           label='Selecionar'
+          styleContent={{flex: 1}}
           styleLabel={styles(theme).select}
           onPress={selectOnPressed}
           style={styles(theme).viewButton}

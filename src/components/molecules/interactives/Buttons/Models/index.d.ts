@@ -29,6 +29,7 @@ export type ModelOfButtonLink = {
   theme: ModelOfTheme;
   label?: string;
   styleLabel?: StyleProp<TextStyle>;
+  styleContent?: StyleProp<TextStyle>;
   IconSVG?: React.FC<React.SVGProps<SVGSVGElement>>;
   style?: StyleProp<ViewStyle>;
   onPress: ((event: GestureResponderEvent) => void) | undefined;

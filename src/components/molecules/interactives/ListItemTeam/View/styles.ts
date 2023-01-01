@@ -12,13 +12,19 @@ export const styles = (theme: ModelOfTheme) => StyleSheet.create({
       width: 1,
       height: 1,
     },
-    marginBottom: theme.metrics.base
+    marginBottom: theme.metrics.base,
   },
   content: {
     flexDirection: 'row',
   },
-  select: { color: theme.colors.text, textAlign: 'right' },
-  edit: { color: theme.colors.text, textAlign: 'left' },
+  select: {
+    color: theme.colors.text,
+    textAlign: 'right',
+  },
+  edit: {
+    color: theme.colors.text,
+    textAlign: 'left',
+  },
   viewBottom: {
     backgroundColor: theme.colors.background,
     height: 40,
@@ -28,7 +34,9 @@ export const styles = (theme: ModelOfTheme) => StyleSheet.create({
     justifyContent: 'space-between',
     width: '100%'
   },
-  viewButton: { flex: 1, paddingHorizontal: theme.metrics.base },
+  viewButton: {
+    paddingHorizontal: theme.metrics.base,
+  },
   viewLeft: {
     padding: theme.metrics.base,
   },
