@@ -13,6 +13,7 @@ export type ModelOfPageWapper = {
   theme: ModelOfTheme;
   children: ReactNode;
   actionSheet?: ReactNode;
+  hideButtonFixed?: boolean;
 };
 
 export class PageWrapper extends Component<ModelOfPageWapper> {}

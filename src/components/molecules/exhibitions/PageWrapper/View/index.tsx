@@ -17,6 +17,7 @@ export const PageWrapper: React.FC<ModelOfPageWapper> = ({
   loading = false,
   theme,
   actionSheet,
+  hideButtonFixed = false,
 }) => {
   if (loading) {
     return (
@@ -41,7 +42,7 @@ export const PageWrapper: React.FC<ModelOfPageWapper> = ({
         >
           <>
           {children}
-          {ButtonFixed && ButtonFixed}
+          {!hideButtonFixed && ButtonFixed}
           </>
         </KeyboardAwareScrollView>
       </View>
@@ -57,7 +58,7 @@ export const PageWrapper: React.FC<ModelOfPageWapper> = ({
         <View style={[styles(theme).content, noHorizontalPadding ? {} : styles(theme).paddingH]}>
           <>
           {children}
-          {ButtonFixed && ButtonFixed}
+          {!hideButtonFixed && ButtonFixed}
           </>
         </View>
       </SafeAreaView>
