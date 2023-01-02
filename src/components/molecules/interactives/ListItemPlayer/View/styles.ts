@@ -6,7 +6,7 @@ export const styles = (theme: ModelOfTheme) => StyleSheet.create({
     backgroundColor: theme.colors.elements,
     borderRadius: theme.metrics.radiusBase,
     width: 190,
-    height: 240,
+    height: 180,
     marginRight: theme.metrics.base
   },
   content: {
@@ -24,14 +24,5 @@ export const styles = (theme: ModelOfTheme) => StyleSheet.create({
   viewDataItem: {
     flexDirection: 'row',
     justifyContent: 'space-between'
-  },
-  viewBottom: {
-    borderTopColor: theme.colors.textElementsSecundary,
-    borderTopWidth: 0.5,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: theme.metrics.large,
-    alignItems: 'center',
-    flex: 1,
   },
 })
