@@ -3,46 +3,42 @@ import { StyleSheet } from "react-native";
 
 export const styles = (theme: ModelOfTheme) => StyleSheet.create({
   container: {
-    backgroundColor: theme.colors.backgroundSecundary,
-    borderRadius: theme.metrics.radiusBase,
-    shadowColor: theme.colors.elements,
-    shadowOpacity: 1,
-    shadowRadius: 1,
-    shadowOffset: {
-      width: 1,
-      height: 1,
-    },
-    marginBottom: theme.metrics.base,
-  },
-  content: {
-    flexDirection: 'row',
-  },
-  select: {
-    color: theme.colors.text,
-    textAlign: 'right',
-  },
-  edit: {
-    color: theme.colors.text,
-    textAlign: 'left',
-  },
-  viewBottom: {
     backgroundColor: theme.colors.background,
-    height: 40,
-    borderBottomEndRadius: theme.metrics.radiusBase,
-    borderBottomStartRadius: theme.metrics.radiusBase,
+    paddingVertical: theme.metrics.large,
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%'
-  },
-  viewButton: {
-    paddingHorizontal: theme.metrics.base,
+    borderBottomColor: theme.colors.elementsSecundary,
+    borderBottomWidth: theme.metrics.borderWidthSmall
   },
   viewLeft: {
+    flex: 1,
+    borderRightColor: theme.colors.elements,
+    borderRightWidth: theme.metrics.borderWidthSmall
+  },
+  viewButtonEdit: {
+    padding: theme.metrics.base,
+    flex: 1
+  },
+  edit: {
+    color: theme.colors.textSecundary,
+    textAlign: 'left',
+    flex: 1
+  },
+  viewCenter: {
+    flexDirection: 'row',
+    paddingLeft: theme.metrics.base,
+    flex: 4
+  },
+  viewCenterLeft: {
     padding: theme.metrics.base,
   },
-  viewRight: { justifyContent: 'center', marginLeft: theme.metrics.base },
+  viewCenterRight: { justifyContent: 'center', marginLeft: theme.metrics.base },
   name: {
     color: theme.colors.textSecundary,
-    fontFamily: 'Roboto-LightItalic',
+    fontFamily: theme.fontFamily.italic,
+  },
+  viewRight: {
+    flex: 0.5,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
 })

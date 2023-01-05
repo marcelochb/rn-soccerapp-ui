@@ -1,9 +1,10 @@
 import React from 'react';
-import { View } from 'react-native';
+import { TouchableWithoutFeedback, View } from 'react-native';
 import { ModelOfListItemTeam } from '../Models';
 import { Avatar, Texts } from '../../../../atoms';
 import { Buttons } from '../../Buttons/View';
 import { styles } from './styles';
+import IconArrowRight from '../../../../../assets/Icons/iconArrowRight.svg'
 
 
 export const ListItemTeam: React.FC<ModelOfListItemTeam> = ({
@@ -17,31 +18,31 @@ export const ListItemTeam: React.FC<ModelOfListItemTeam> = ({
 }) => {
   return (
     <View style={styles(theme).container}>
-      <View style={styles(theme).content}>
-        <View style={styles(theme).viewLeft}>
-          <Avatar theme={theme} source={avatarSource} small />
-        </View>
-        <View style={styles(theme).viewRight}>
-          <Texts.Title theme={theme} small>{name}</Texts.Title>
-          <Texts.Body theme={theme} style={styles(theme).name}>{`${responsable} - ${phone}`}</Texts.Body>
-        </View>
-      </View>
-      <View style={styles(theme).viewBottom}>
+      <View style={styles(theme).viewLeft}>
         <Buttons.Link theme={theme}
           label='Editar'
           styleLabel={styles(theme).edit}
           styleContent={{flex: 1}}
           onPress={editOnPressed}
-          style={styles(theme).viewButton}
+          style={styles(theme).viewButtonEdit}
           />
-        <Buttons.Link theme={theme}
-          label='Selecionar'
-          styleContent={{flex: 1}}
-          styleLabel={styles(theme).select}
-          onPress={selectOnPressed}
-          style={styles(theme).viewButton}
-        />
       </View>
+      <TouchableWithoutFeedback onPress={selectOnPressed}>
+        <>
+          <View style={styles(theme).viewCenter}>
+            <View style={styles(theme).viewCenterLeft}>
+              <Avatar theme={theme} source={avatarSource} small />
+            </View>
+            <View style={styles(theme).viewCenterRight}>
+              <Texts.Title theme={theme} small>{name}</Texts.Title>
+              <Texts.Body theme={theme} style={styles(theme).name}>{`${responsable} - ${phone}`}</Texts.Body>
+            </View>
+          </View>
+          <View style={styles(theme).viewRight}>
+            <IconArrowRight fill={theme.colors.textSecundary}/>
+          </View>
+        </>
+      </TouchableWithoutFeedback>
     </View>
   );
 }
