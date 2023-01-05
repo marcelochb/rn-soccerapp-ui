@@ -15,7 +15,7 @@ export const styles = (theme: ModelOfTheme) => {
     },
     outline: {
       backgroundColor: colors.background,
-      borderWidth: 1,
+      borderWidth: metrics.borderWidthLarger,
       borderColor: colors.elements,
     },
     fixed: {

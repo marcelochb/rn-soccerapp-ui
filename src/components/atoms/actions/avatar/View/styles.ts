@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = (theme: ModelOfTheme) => StyleSheet.create({
   container: {
-    borderWidth: 1,
+    borderWidth: theme.metrics.borderWidthLarger,
     borderColor: theme.colors.elements,
     borderStyle: 'solid',
     width: 120,
@@ -14,7 +14,7 @@ export const styles = (theme: ModelOfTheme) => StyleSheet.create({
   },
   error: { borderColor: theme.colors.textHighlight },
   image: {
-    borderWidth: 1,
+    borderWidth: theme.metrics.borderWidthLarger,
     borderColor: theme.colors.elements,
     borderRadius: 60,
     width: 120,

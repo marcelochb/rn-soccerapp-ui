@@ -47,7 +47,7 @@ const styles = (theme: ModelOfTheme) => StyleSheet.create({
   container: {
     flexDirection: 'row',
     borderBottomColor: theme.colors.textSecundary,
-    borderBottomWidth: 0.5,
+    borderBottomWidth: theme.metrics.borderWidthBase,
     marginBottom: theme.metrics.base,
     paddingBottom: theme.metrics.base
   },
@@ -66,11 +66,11 @@ const styles = (theme: ModelOfTheme) => StyleSheet.create({
   },
   name: {
     color: theme.colors.textSecundary,
-    fontFamily: 'Roboto-LightItalic',
+    fontFamily: theme.fontFamily.italic,
   },
   distance: {
     color: theme.colors.textHighlight,
     marginTop: theme.metrics.base,
-    fontFamily: 'Roboto-LightItalic',
+    fontFamily: theme.fontFamily.italic,
   }
 })

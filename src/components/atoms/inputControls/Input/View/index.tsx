@@ -55,7 +55,7 @@ const styles = (theme: ModelOfTheme) => {
   return StyleSheet.create({
     container: {
       borderBottomColor: colors.elements,
-      borderBottomWidth: 1,
+      borderBottomWidth: theme.metrics.borderWidthLarger,
       padding: metrics.base,
     },
     subtitle: {textTransform: 'capitalize', marginBottom: metrics.smallest},

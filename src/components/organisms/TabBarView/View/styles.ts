@@ -17,7 +17,7 @@ export const styles = (theme: ModelOfTheme) => StyleSheet.create({
   },
   tabIndicatorContainer: {
     borderStyle: 'solid',
-    borderWidth: 1,
+    borderWidth: theme.metrics.borderWidthLarger,
     borderRadius: theme.metrics.radiusBase,
     borderColor: theme.colors.elements
   },

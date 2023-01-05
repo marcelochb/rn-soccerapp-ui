@@ -18,7 +18,7 @@ export const styles = (theme:ModelOfTheme) => {
       justifyContent: 'space-between',
       alignItems: 'center',
       borderColor: colors.elementsThird,
-      borderWidth: 1
+      borderWidth: theme.metrics.borderWidthLarger
     },
     selected: {
       borderColor: colors.elements,

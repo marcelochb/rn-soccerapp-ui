@@ -6,7 +6,7 @@ export const styles = (theme: ModelOfTheme) => {
     container: {
       borderColor: theme.colors.textElementsSecundary,
       borderRadius: theme.metrics.radiusBase,
-      borderWidth: 1,
+      borderWidth: theme.metrics.borderWidthLarger,
       marginBottom: theme.metrics.large,
       padding: theme.metrics.large
     },
@@ -25,7 +25,7 @@ export const styles = (theme: ModelOfTheme) => {
     },
     line: {
       borderColor: theme.colors.backgroundSecundary,
-      borderWidth: 0.5,
+      borderWidth: theme.metrics.borderWidthBase,
     },
     capitalize: {textTransform: 'capitalize'},
     weekDay: {flexDirection: 'row'},
