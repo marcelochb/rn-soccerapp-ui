@@ -1,10 +1,11 @@
 import React from 'react';
-import { TouchableWithoutFeedback, View } from 'react-native';
+import { View } from 'react-native';
 import { ModelOfListItemTeam } from '../Models';
 import { Avatar, Texts } from '../../../../atoms';
 import { Buttons } from '../../Buttons/View';
 import { styles } from './styles';
 import IconArrowRight from '../../../../../assets/Icons/iconArrowRight.svg'
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 
 export const ListItemTeam: React.FC<ModelOfListItemTeam> = ({
@@ -21,14 +22,16 @@ export const ListItemTeam: React.FC<ModelOfListItemTeam> = ({
       <View style={styles(theme).viewLeft}>
         <Buttons.Link theme={theme}
           label='Editar'
-          styleLabel={styles(theme).edit}
-          styleContent={{flex: 1}}
+          styleLabel={styles(theme).labelEdit}
+          styleContent={styles(theme).buttonEditContent}
           onPress={editOnPressed}
           style={styles(theme).viewButtonEdit}
           />
       </View>
-      <TouchableWithoutFeedback onPress={selectOnPressed}>
-        <>
+      <TouchableWithoutFeedback onPress={selectOnPressed}
+        containerStyle={styles(theme).viewSelectContent}
+        style={styles(theme).viewSelect}
+        >
           <View style={styles(theme).viewCenter}>
             <View style={styles(theme).viewCenterLeft}>
               <Avatar theme={theme} source={avatarSource} small />
@@ -41,7 +44,6 @@ export const ListItemTeam: React.FC<ModelOfListItemTeam> = ({
           <View style={styles(theme).viewRight}>
             <IconArrowRight fill={theme.colors.textSecundary}/>
           </View>
-        </>
       </TouchableWithoutFeedback>
     </View>
   );

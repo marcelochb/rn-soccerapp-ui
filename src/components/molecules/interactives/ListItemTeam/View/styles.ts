@@ -18,7 +18,8 @@ export const styles = (theme: ModelOfTheme) => StyleSheet.create({
     padding: theme.metrics.base,
     flex: 1
   },
-  edit: {
+  buttonEditContent: {flex: 1},
+  labelEdit: {
     color: theme.colors.textSecundary,
     textAlign: 'left',
     flex: 1
@@ -41,4 +42,6 @@ export const styles = (theme: ModelOfTheme) => StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
+  viewSelect: {flexDirection: 'row'},
+  viewSelectContent: {flex:4}
 })
