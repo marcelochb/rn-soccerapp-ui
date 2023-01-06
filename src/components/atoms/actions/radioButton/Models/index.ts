@@ -12,4 +12,4 @@ export type ModelOfRadioButton = {
   theme: ModelOfTheme;
 }
 
-export class RaioButton extends Component<ModelOfRadioButton> {}
+export class RadioButton extends Component<ModelOfRadioButton> {}
