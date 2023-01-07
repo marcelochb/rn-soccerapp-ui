@@ -13,15 +13,18 @@ export const ListItemTeam: React.FC<ModelOfListItemTeam> = ({
   avatarSource,
   name,
   responsable,
+  isSelectable = true,
+  labelEdit,
   phone,
   selectOnPressed,
   editOnPressed,
+  style
 }) => {
   return (
-    <View style={styles(theme).container}>
+    <View style={[styles(theme).container,style]}>
       <View style={styles(theme).viewLeft}>
         <Buttons.Link theme={theme}
-          label='Editar'
+          label={labelEdit}
           styleLabel={styles(theme).labelEdit}
           styleContent={styles(theme).buttonEditContent}
           onPress={editOnPressed}
@@ -42,7 +45,7 @@ export const ListItemTeam: React.FC<ModelOfListItemTeam> = ({
             </View>
           </View>
           <View style={styles(theme).viewRight}>
-            <IconArrowRight fill={theme.colors.textSecundary}/>
+            {isSelectable && <IconArrowRight fill={theme.colors.textSecundary}/>}
           </View>
       </TouchableWithoutFeedback>
     </View>

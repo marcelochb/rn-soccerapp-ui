@@ -4,14 +4,14 @@ import { StyleSheet } from "react-native";
 export const styles = (theme: ModelOfTheme) => StyleSheet.create({
   container: {
     backgroundColor: theme.colors.background,
-    paddingVertical: theme.metrics.large,
+    paddingVertical: theme.metrics.base,
     flexDirection: 'row',
     borderBottomColor: theme.colors.elementsSecundary,
     borderBottomWidth: theme.metrics.borderWidthSmall
   },
   viewLeft: {
     flex: 1,
-    borderRightColor: theme.colors.elements,
+    borderRightColor: theme.colors.elementsSecundary,
     borderRightWidth: theme.metrics.borderWidthSmall
   },
   viewButtonEdit: {
